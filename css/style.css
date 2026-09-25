@@ -1,0 +1,105 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #dedede;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 32px;
+}
+
+p {
+    font-size: 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 15px auto;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px;
+}
+
+/* 1-Column Grid with 10px Gap */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+figure {
+    margin: 0;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 2px solid #bbbbbb;
+    text-align: center;
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+figcaption {
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+/* Tablet View (772px) */
+@media screen and (min-width: 772px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    figure {
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    figure:last-child {
+        grid-column: span 2;
+    }
+}
+
+/* Large Screen View (992px) */
+@media screen and (min-width: 992px) {
+    figure {
+        border-radius: 0;
+    }
+
+    figure:last-child {
+        grid-column: auto;
+    }
+
+    figure:nth-child(3n) {
+        grid-column: span 2;
+    }
+}
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Accessibility - Dark Color Scheme */
+@media (prefers-color-scheme: dark) {
+    figure {
+        background-color: #222222;
+        color: #fff282;
+        border: 2px solid #000000;
+    }
+}
